@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Project 2</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+            width:100%;
+        }
+        /*navbar*/
+        header{
+            background-color: white;
+        }
+        
+        .navbar{
+          font-size: 18px;
+          float:left;
+          padding-top: 50px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar a{
+            text-decoration: none;
+            color:black;
+            margin-left: 24px;
+            padding-bottom: 9px;
+        }
+        a.link{
+            position: relative;
+        }
+        a.link:before{
+            position: absolute;
+            content: "";
+            visibility: hidden; 
+            height:4px;
+            width:100%;
+            bottom:0;
+            left:0;
+            background-color:DeepSkyBlue ;
+            transform:scaleX(0);
+            transition: all 0.3s ease-in-out;
+        } 
+        a.link:hover:before{
+            visibility:visible;
+            transform:scaleX(1);
+        }
+        a.active {
+            padding-bottom: 5px;
+            border-bottom:  4px solid deepskyblue;
+        }
+       .img{
+           width:180px;
+           height:auto;
+           float:left;
+           margin-bottom:25px;
+       }
+       .flexcontainer{
+           display:flex;
+           width:100%;
+           overflow:hidden;
+           background-color: black;
+           height:360px;
+       }
+       .gridcontainer{
+          display:grid;
+          width:100%;
+          margin-top:6px;
+          overflow:hidden;
+          grid-template-columns: 420px 420px 410px ;
+          height: 360px;
+          background-color: black;
+          margin-left: -20px;
+        }
+        .item1{
+            position: relative;
+            overflow:hidden ;
+            height:380px;
+           
+          }
+        .item2{
+            position: relative;
+            overflow:hidden ;
+            height:360px;
+            margin-left: -14px;
+         }
+        .item3{
+            background-color: rgba(37, 35, 35, 0.842);
+            overflow:hidden ;
+            height:360px;
+         
+        }
+        .featured{
+          width:100%;
+          height:1420px;
+          background-color: black;
+          font-weight: bold;
+          color:white;
+          font-size: 30px; 
+          padding-top: 65px; 
+          padding-left: 62px;
+        }
+        .b{
+            position: absolute;
+            width:100%;
+            background-color: rgba(0, 0, 0, 0.101);
+            top:280px;
+            border:none;
+        }
+        .c{
+            position: absolute;
+            width:100%;
+            background-color: rgba(0, 0, 0, 0.100);
+            top:230px;
+            border:none;
+         }
+       .ben{font-size: 18px;
+          color:white;
+        }
+       .bendown{
+          font-size: 12px;
+          color:white;  
+        }
+        .ben2{
+           font-size: 18px;
+           color:white;
+        }
+       .bendown2{
+          font-size: 12px;
+          color:white;  
+        }
+        .image:hover {
+            transform:scale(1.02);
+            opacity:0.7;
+          transition:  0.1s ease-in-out; 
+        }
+        .image:hover :after{
+           width:420px;
+           height:360px;
+        }
+        .item1:hover i{
+          color:deepskyblue;
+        }
+       .item2:hover i{
+          color:deepskyblue;
+        }
+        .item3:hover i{
+            color:deepskyblue; 
+        }
+        .item4:hover i{
+            color:deepskyblue; 
+        }
+        .item5:hover i{
+            color:deepskyblue; 
+        }
+        .item6:hover i{
+            color:deepskyblue; 
+        }
+        .item7:hover i{
+            color:deepskyblue; 
+        }
+        .item8:hover i{
+            color:deepskyblue; 
+        }
+        .item9:hover i{
+            color:deepskyblue; 
+        }
+        .item10:hover i{
+            color:deepskyblue; 
+        }
+        .item11:hover i{
+            color:deepskyblue; 
+        }
+    .black{
+        background-color: black;
+    }
+    .flexcontainer2{
+           display:flex;
+           width:100%;
+           background-color: black;
+       }
+       .gridcontainer2{
+          display:grid;
+          width:100%;
+          grid-template-columns: 300px 300px 300px 300px ;
+          grid-template-rows:300px 300px ;
+          background-color: black;
+          column-gap: 10px;
+          row-gap:25px;
+        }
+        .item4{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item5{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item6{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item7{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item8{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item9{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item10{
+            position: relative;
+            overflow:hidden ;
+        }
+        .item11{
+            position: relative;
+            overflow:hidden ;    
+        }
+        .info:hover a{
+            color: blue;
+        }
+        .grey{
+            background-color: rgba(22, 21, 21, 0.942);;
+            width:100%;
+            height:170px;
+        }
+        .gr{
+            text-align: center;   
+            padding-top: 60px;  }
+        .g{
+            text-decoration: none;
+            color:white;
+            padding:35px 13px;       
+        }
+        .bl{
+            background-color:black;
+        }
+        .dis{
+            opacity: 0.5;
+            padding-left:20px;
+            padding-right:20px;
+        }
+        .dis:hover{
+            opacity:1;
+        }
+        .g:hover{
+            color:deepskyblue;
+        }
+      
+     
+     
+     
+
+
+ @media screen and (min-width: 480px){
+        #home{display: none;}
+
+       }
+       @media screen and (max-width: 480px){
+       #home{
+           position: relative;
+           font-size: 19px;
+           font-family: Arial, Helvetica, sans-serif;
+           display: inline-block;
+       }
+       #home a{
+        color:black;
+       }
+       #home a:hover{
+           color:deepskyblue;
+       }
+       #btn{
+           background-color: white;
+           border:white;
+           padding:10px;
+           font-size: 16px;
+       }
+       #btn:hover{
+           color:deepskyblue;
+           cursor: pointer;
+      }
+      /*overlay*/
+       .overlay{
+           background-color: whitesmoke;
+           top:0;
+           left:0;
+           position:fixed;
+           z-index: 1;
+           width:0;
+           height:300px;
+           overflow-x: hidden;
+           overflow:hidden;
+           transition: all 0.8s;
+       }
+       .overlay-content{
+           position: relative;
+           top:15%;
+           margin-top: 15px;
+           text-align: centre;
+           padding:14px;
+           width:100%;
+       }
+       .overlay-content a{
+           color:gray;
+           font-size: 18px;
+           width:100%;
+           text-decoration: none;
+       }
+       .overlay-content a:hover{
+           color:deepskyblue;
+       }
+       .cross{
+           border:whitesmoke;
+       }
+        .overlay-content .cross{
+            top:0;
+            right:0;
+            position:absolute;
+            font-size: 20px;
+        }
+        .img{
+            position:absolute;
+            float: right;
+            margin-left: 55%;
+            margin-top: 0px;
+            width:80px;
+            height:auto; 
+         }
+       header{
+           display:none;
+       }
+       .featured{
+          width:100%;
+          height:4720px;
+          background-color: black;
+          font-weight: bold;
+          color:white;
+          font-size: 30px; 
+          padding-top: 65px; 
+          padding-left: 30px;
+        }
+       .flexcontainer{
+           width:100%;
+           overflow:hidden;
+           background-color: black;
+           height:1120px;
+         }
+       .gridcontainer{
+          display:grid;
+          grid-template-columns: 350px;
+          grid-template-rows: 370px 370px 370px;
+          width:100%;
+          overflow:hidden;
+          background-color: black;
+          height:1120px;
+           
+        }
+    .flexcontainer2{
+           width:100%;
+           background-color: black;
+           height:2910px;
+       }
+       .gridcontainer2{
+          display:grid;
+          width:100%;
+          grid-template-columns: 350px;
+          grid-template-rows:350px 350px 350px 350px 350px 350px 350px 350px ;
+          background-color: black;
+          height:2910px;
+        }
+        .grey{
+            background-color: rgba(22, 21, 21, 0.942);;
+            width:100%;
+            height:180px;
+        }
+        #ge{
+            padding-bottom: 60px;
+        }
+
+      
+      
+      
+      
+        }
+    
+    
+    
+    
+    
+    
+    </style>
+    <script type="text/javascript">
+        function openNav() {
+        document.getElementById("overlay1").style.width="70%";
+        }
+        function closeNav() {
+        document.getElementById("overlay1").style.width="0%";
+        }
+    </script>
+      
+
+</head>
+<body>
+ <header>
+    <img class="img" src="cartoon1.jpg" alt="logo"></img> 
+  <span class="navbar">
+        <a href="#" class="active">HOME</a>
+        <a href="#" class="link">SCHEDULE</a>
+        <a href="#" class="link">WHERE TO WATCH</a>
+        <a href="#" class="link">CONTESTS</a>
+  </span>
+</header><br><br><br><br>
+
+
+<span id="home" >
+    <div id="overlay1" class="overlay">
+         <button onclick="closeNav()" class="cross" title="btn" ><i class="fa fa-times fa-lg "target="_blank "></i></button>   
+        <div class="overlay-content">
+            <a href="#" >HOME</a><br><br>
+            <a href="#">SCHEDULE</a><br><br>
+            <a href="#">WHERE TO WATCH </a><br><br>
+            <a href="#">CONTESTS</a><br><br>
+        </div>
+    </div>
+<button  onclick="openNav()" id="btn"  ><i class="fa fa-bars "target="_blank ">  MENU</i></button> 
+<img class="img" src="cartoon1.jpg" alt="logo"></img>
+</span><br><br><br><br>
+
+
+
+<div class="featured">
+    <div  >FEATURED</div> <br>
+  <div class="flexcontainer">    
+ <div class="gridcontainer" style="background-color: black;">
+     <div class="item1">
+         <img src="ben10.jpg" class="image">
+      <div class="b">
+        <div style="padding-left: 32px;"><h2 class="ben">BEN 10</h2></div>
+        <div style="padding-left: 32px;"><p class="bendown">Weekdays 8:30pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p></div>
+      </div>
+     </div>
+
+     <div class="item2">
+        <img src="ok.jpg" class="image">
+        <div class="b">
+            <div style="padding-left: 12px;"><h2 class="ben2">OK.K.O! LET'S BE HEROES</h2></div>
+                <div style="padding-left: 12px;"><p class="bendown2">Weekends 3:30pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> 
+   </div>
+                </div>
+     </div>
+     <div class="item3"></div>
+ </div>
+</div><br>
+   
+<div class="flexcontainer2">    
+    <div class="gridcontainer2" style="background-color: black;">
+        <div class="item4">
+            <img src="steve.jpg" class="image">
+            <div class="c">
+              <div style="padding-left: 12px;"><span class="ben2">STEVEN UNIVERSE</span></div>
+              <div style="padding-left: 12px; "><span class="bendown2">Weekends 11:30pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></span> </div> 
+        </div>
+        </div>
+        <div class="item5">
+            <img src="bears.png" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"><h2 class="ben2">WE BARE BEARS</h2></div>
+            <div style="padding-left: 12px;"><p class="bendown2">Weekends 6:00pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> </div>
+        </div>
+        </div>
+        <div class="item6">
+            <img src="PowerpuffGirls.jpg" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"><h2 class="ben2">THE POWERPUFF GIRLS</h2></div>
+            <div style="padding-left: 12px;"><p class="bendown2">Weekends 7:00pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p></div> 
+        </div>
+    </div>
+        <div class="item7">
+            <img src="regular.jpg" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"><h2 class="ben2">THE REGULAR SHOW</h2></div>
+            <div style="padding-left: 12px;"><p class="bendown2">Weekends 8:00pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> </div>
+        </div>
+        </div>
+        <div class="item8">
+            <img src="adventure.jpg" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"><h2 class="ben2">ADVENTURE TIME</h2></div>
+            <div style="padding-left: 12px;"><p class="bendown2">Weekends noon ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> </div>
+        </div>
+    </div>
+        <div class="item9">
+            <img src="apple.jpg" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"> <h2 class="ben2">APPLE AND ONION</h2></div>
+            <div style="padding-left: 12px;"> <p class="bendown2">Weekends 1:30pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> </div>
+        </div>
+        </div>
+        <div class="item10">
+            <img src="mao.jpg" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"><h2 class="ben2">MAO MAO</h2></div>
+            <div style="padding-left: 12px;"><p class="bendown2">Weekends 9:30pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> </div>
+        </div>
+    </div>
+        <div class="item11">
+            <img src="gum.jpg" class="image">
+            <div class="c">
+            <div style="padding-left: 12px;"> <h2 class="ben2">AMAZING WORLD OF GUMBALL</h2></div>
+            <div style="padding-left: 12px;"> <p class="bendown2">Weekends 10:30pm ET/PT  <i class="fa fa-caret-right fa-lg"target="_blank "></i></p> </div>
+        </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div>
+    <div style="font-size: 30px;">ABOUT CARTOON NETWORK</div>
+    <p style="font-size: 17px; font-weight: lighter;margin-right: 9%;">Cartoon Network (Canada) is the destination for kids and families seeking hilarious animation. Cartoon Network is the funny and unexpected 
+        brand that stands out from the pack in a way that kids can relate.</p>
+    <div id="ge"><br>
+        <div style="font-size: 30px;">CONTACT US</div>
+        <p class="info" style="font-size: 17px; font-weight: lighter;">We want to hear from you! To share your feedback, please email us at 
+        <a href="#" style="color:white;text-decoration: none;">info@cartoonnetwork.ca</a></p>  
+    </div>
+</div>
+</div>
+
+<div class="grey">
+     <div class="gr">
+         <a href="#" class="g">About Us</a>
+         <a href="#" class="g">Privacy Policy</a>
+         <a href="#" class="g">Terms of Use</a>
+         <a href="#" class="g">Advertising Standard Terms</a>
+         <a href="#" class="g">Subuscribe to channel</a>
+         <p style="font-size: 11px; padding-top:20px; color:grey;" >2021 Corus Entertainment Inc.All rights reserved. Corus Telivision.</p>
+     </div>
+</div>
+
+<div class="bl">
+    <div class="gr">
+       <div style="font-size:27px; color:white; font-weight: bold;">CORUS.</div>
+       <p style="font-size: 15px; padding-top:20px; color:white" >Other Corus Kids Websites</p>
+       <div style=" padding-top:10px; padding-bottom: 70px;">
+          <a href="#" ><img src="disney.jpg" class="dis" style="padding-top: 10px;"/></a>
+          <a href="#" ><img src="disney-junior-logo.jpg" class="dis"/></a>
+          <a href="#"  ><img src="teletoon.jpg" class="dis" style="padding-top: 30px;"/></a>
+          <a href="#" ><img src="YTV_Logo.png" class="dis"/></a>
+          <a href="#" ><img src="tree.jpg" class="dis"/></a>
+       </div>
+    </div>
+</div>
+
+
+
+
+
+
+  
+  
+  </body>
+</html>
